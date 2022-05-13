@@ -27,7 +27,7 @@ vector<string>::iterator OrgChart::begin_reverse_order(){
     return check;
 }
 
-vector<string>::iterator OrgChart::end_reverse_order(){
+vector<string>::iterator OrgChart::reverse_order(){
     vector<string>::iterator check;
     return check;
 }
@@ -39,6 +39,15 @@ vector<string>::iterator OrgChart::begin_preorder(){
 
 vector<string>::iterator OrgChart::end_preorder(){
     vector<string>::iterator check;
+    return check;
+}
+
+vector<int>:: iterator OrgChart::begin(){
+    vector<int>::iterator check;
+    return check;
+}
+vector<int>:: iterator OrgChart::end(){
+    vector<int>::iterator check;
     return check;
 }
 

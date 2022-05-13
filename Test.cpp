@@ -2,8 +2,6 @@
 // Created by matan on 09/05/2022.
 //
 #include <iostream>
-#include <fstream>
-#include <sstream>
 #include <stdexcept>
 #include "doctest.h"
 #include "sources/OrgChart.hpp"
@@ -43,7 +41,7 @@ TEST_CASE("Base test 1") {
     } // prints: CEO CTO CFO COO VP_SW VP_BI
     names = {"VP_SW", "VP_BI", "CTO", "CFO", "COO", "CEO"};
     index = 0;
-    for (auto it = organization.begin_reverse_order(); it != organization.end_reverse_order(); ++it)
+    for (auto it = organization.begin_reverse_order(); it != organization.reverse_order(); ++it)
     {
         CHECK_EQ(*it == names.at(index), true);
         index++;

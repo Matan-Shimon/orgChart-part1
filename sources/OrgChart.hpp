@@ -2,10 +2,7 @@
 // Created by matan on 09/05/2022.
 //
 
-#ifndef ORGCHART_PART1_ORHCHART_H
-#define ORGCHART_PART1_ORHCHART_H
-
-#endif //ORGCHART_PART1_ORHCHART_H
+#pragma once
 #include "iostream"
 #include<iterator> // for iterators
 #include<vector> // for vectors
@@ -20,9 +17,11 @@ namespace ariel {
         vector<string>::iterator begin_level_order();
         vector<string>::iterator end_level_order();
         vector<string>::iterator begin_reverse_order();
-        vector<string>::iterator end_reverse_order();
+        vector<string>::iterator reverse_order();
         vector<string>::iterator begin_preorder();
         vector<string>::iterator end_preorder();
+        vector<int>:: iterator begin();
+        vector<int>:: iterator end();
         string get_manager(string worker);
         string get_root();
     };
