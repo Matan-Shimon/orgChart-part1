@@ -23,7 +23,7 @@ TEST_CASE("Base test 1") {
     CHECK_EQ(organization.get_manager("COO") == "CEO", true);
     CHECK_EQ(organization.get_manager("VP_SW") == "CTO", true);
     CHECK_EQ(organization.get_manager("VP_BI") == "COO", true);
-    CHECK_EQ(organization.get_manager("Something") == "This worker is not in the organization", true);
+    CHECK_THROWS(organization.get_manager("Something"));
 
     cout << organization << endl; /* Prints the org chart in a reasonable format. For example:
        CEO
@@ -77,15 +77,15 @@ TEST_CASE("Base test 2") {
             .add_sub("COO", "VP_BI")
             .add_sub("CEO","CGO");      // Now the VP_BI is subordinate to the COO
 
-            CHECK_EQ(organization.get_manager("CEO") == "No manager above", true);
+            CHECK_THROWS(organization.get_manager("CEO"));
             CHECK_EQ(organization.get_manager("CTO") == "CEO", true);
             CHECK_EQ(organization.get_manager("CFO") == "CEO", true);
             CHECK_EQ(organization.get_manager("COO") == "CEO", true);
             CHECK_EQ(organization.get_manager("VP_SW") == "CTO", true);
             CHECK_EQ(organization.get_manager("VP_BI") == "COO", true);
-            CHECK_EQ(organization.get_manager("Something") == "This worker is not in the organization", true);
+            CHECK_THROWS(organization.get_manager("Something"));
             CHECK_EQ(organization.get_manager("CGO") == "CEO", true);
-            CHECK_EQ(organization.get_manager("UFO") == "his worker is not in the organization", true);
+            CHECK_THROWS(organization.get_manager("UFO"));
             CHECK_EQ(organization.get_root() == "CEO", true);
             organization.add_root("MAFKAL");
             CHECK_NE(organization.get_root() == "CEO", true);
